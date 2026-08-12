@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Conheça os sites e projetos desenvolvidos pela Nytreon.">
+
+        <link rel="stylesheet" href="./styles/index.css?v=10">
+        <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+        <title>Nytreon - Projetos</title>
+    </head>
+
+    <body>
+        <div class="background" aria-hidden="true">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+        </div>
+
+        <header>
+            <nav class="navbar">
+                <a href="#" class="brand" aria-label="Nytreon - início">
+                    <span class="brand-icon">
+                        <img src="./images/icon-nytreon.png" alt="">
+                    </span>
+    
+                    <span>Nytreon</span>
+                </a>
+    
+                <div class="navbar-status">
+                    <span class="status-dot"></span>
+                    <span>Projetos online</span>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="hero-label">
+                    <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+                    <span>Ecossistema Nytreon</span>
+                </div>
+    
+                <h1>
+                    Nossos sites,<br>
+                    <span>nossos projetos.</span>
+                </h1>
+    
+                <p>
+                    Explore os projetos e plataformas desenvolvidos pela
+                    Nytreon. Cada projeto criado para entregar uma experiência
+                    simples, moderna e eficiente.
+                </p>
+            </section>
+    
+            <section class="projects-section">
+                <div class="section-header reveal">
+                    <div class="section-title">
+                        <h2>Projetos</h2>
+                        <p>Conheça nossas plataformas e experiências digitais.</p>
+                    </div>
+    
+                    <span class="project-count" id="projectCount">
+                        0 projetos
+                    </span>
+                </div>
+    
+                <div class="projects-grid" id="projectsGrid">
+                    <!-- Os projetos serão inseridos aqui -->
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-inner">
+                <span>
+                    <div id="copyright-div">
+                        <p id="copyright"></p>
+                    </div>
+                </span>
+
+                <span>
+                    Feito com <i class="fa-solid fa-heart" aria-hidden="true"></i>
+                </span>
+            </div>
+        </footer>
+
+        <script src="./scripts/copyright.js"></script>
+
+        <script>
+            const projects = [
+                {
+                    name: "NyGYM",
+                    category: "Fitness",
+                    description: "Uma plataforma para criar, organizar e acompanhar seus treinos e rotinas, permitindo registrar sua evolução e manter tudo acessível em um só lugar, sem depender de anotações em papel.",
+                    url: "https://nygym.com.br/",
+                    image: "./images/projects/icon-nygym.png"
+                },
+    
+                {
+                    name: "Termos de Uso e Política de Privacidade",
+                    category: "Documentação",
+                    description: "Acesse as informações legais da Nytreon, incluindo nossos Termos de Uso, Política de Privacidade e diretrizes sobre a utilização de nossos serviços.",
+                    url: "./pages/terms.html",
+                    icon: "fa-solid fa-shield-halved"
+                }
+            ];
+    
+            const projectsGrid = document.getElementById("projectsGrid");
+            const projectCount = document.getElementById("projectCount");
+    
+            function createProjectIcon(project) {
+                if (project.image) {
+                    return `<img src="${project.image}" alt="Ícone do ${project.name}" loading="lazy">`;
+                }
+    
+                if (project.icon) {
+                    return `<i class="${project.icon}" aria-hidden="true"></i>`;
+                }
+    
+                return `<i class="fa-solid fa-globe" aria-hidden="true"></i>`;
+            }
+    
+            function renderProjects() {
+                if (!projectsGrid) {
+                    return;
+                }
+    
+                projectsGrid.innerHTML = "";
+    
+                projects.forEach((project, index) => {
+                    const card = document.createElement("article");
+    
+                    card.className = "project-card reveal";
+                    card.style.transitionDelay = `${index * 70}ms`;
+
+                    const icon = createProjectIcon(project);
+    
+                    card.innerHTML = `
+                        <div class="project-icon">${icon}</div>
+    
+                        <div class="project-content">
+                            <span class="project-category">${project.category}</span>
+                            <h3 class="project-title">${project.name}</h3>
+                            <p class="project-description">${project.description}</p>
+                        </div>
+
+                        <a class="project-link" href="${project.url}" target="_blank" rel="noopener noreferrer" aria-label="Acessar ${project.name}">
+                            <span>Acessar projeto</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                        </a>
+                    `;
+    
+                    projectsGrid.appendChild(card);
+                });
+    
+                const total = projects.length;
+    
+                projectCount.textContent = `${total} ${ total === 1 ? "projeto" : "projetos" }`;
+                initReveal();
+            }
+    
+            let revealObserver;
+    
+            function initReveal() {
+                const elements = document.querySelectorAll(".reveal");
+    
+                if (!("IntersectionObserver" in window)) {
+                    elements.forEach(element => {
+                        element.classList.add("visible");
+                    });
+    
+                    return;
+                }
+    
+                if (revealObserver) {
+                    revealObserver.disconnect();
+                }
+    
+                revealObserver = new IntersectionObserver(
+                    entries => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add("visible");
+                                revealObserver.unobserve(entry.target);
+                            }
+                        });
+                    },
+                    {
+                        threshold: 0.12
+                    }
+                );
+    
+                elements.forEach(element => {
+                    revealObserver.observe(element);
+                });
+            }
+    
+            renderProjects();
+        </script>
+    </body>
+</html>
