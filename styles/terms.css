@@ -803,9 +803,7 @@ footer {
         margin: 25mm 22mm 25mm 22mm;
     }
 
-    *,
-    *::before,
-    *::after {
+    *, *::before, *::after {
         box-shadow: none !important;
         text-shadow: none !important;
     }
