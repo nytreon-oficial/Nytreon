@@ -12,14 +12,11 @@
     --gray-100: #f5f5f5;
     --gray-50: #fafafa;
     --white: #ffffff;
-
     --border: #e7e7e7;
     --text: #171717;
     --muted: #666666;
-
     --shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.05);
     --shadow-md: 0 15px 45px rgba(0, 0, 0, 0.08);
-
     --radius: 18px;
 }
 
@@ -35,119 +32,70 @@ html {
 }
 
 body {
-    font-family:
-        Inter,
-        ui-sans-serif,
-        system-ui,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        sans-serif;
-
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     color: var(--text);
-
     background:
-        radial-gradient(
-            circle at 10% 10%,
-            rgba(0, 0, 0, 0.035),
-            transparent 25%
-        ),
-        radial-gradient(
-            circle at 90% 20%,
-            rgba(0, 0, 0, 0.025),
-            transparent 25%
-        ),
+        radial-gradient(circle at 10% 10%, rgba(0, 0, 0, 0.035), transparent 25%),
+        radial-gradient(circle at 90% 20%, rgba(0, 0, 0, 0.025), transparent 25%),
         var(--gray-50);
-
     line-height: 1.7;
 }
-
-
 
 header {
     position: sticky;
     top: 0;
     z-index: 1000;
-
     background: rgba(255, 255, 255, 0.90);
-
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
-
     border-bottom: 1px solid rgba(229, 229, 229, 0.9);
-
     animation: slideDown 0.6s ease both;
 }
 
 .header-inner {
     width: min(1180px, calc(100% - 40px));
     min-height: 76px;
-
     margin: auto;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     gap: 25px;
 }
-
-
 
 .brand {
     display: flex;
     align-items: center;
-
     gap: 11px;
-
     color: var(--black);
-
     text-decoration: none;
-
     font-size: 1.25rem;
     font-weight: 850;
-
     letter-spacing: -0.05em;
 }
 
 .brand-icon {
     width: 38px;
     height: 38px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     flex: 0 0 38px;
-
     overflow: hidden;
-
     border-radius: 11px;
-
     color: var(--white);
     background: var(--black);
-
-    box-shadow:
-        0 8px 20px rgba(0, 0, 0, 0.15);
-
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     animation: logoPulse 3s ease-in-out infinite;
 }
 
 .brand-icon img {
     width: 100%;
     height: 100%;
-
     display: block;
-
     object-fit: contain;
-
     border-radius: inherit;
-
     background: transparent;
-
-    transition:
-        transform 0.3s ease,
-        filter 0.3s ease;
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .brand:hover .brand-icon img {
@@ -156,12 +104,8 @@ header {
 
 .brand:hover .brand-icon {
     transform: translateY(-1px);
-
-    box-shadow:
-        0 10px 25px rgba(0, 0, 0, 0.20);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.20);
 }
-
-
 
 nav {
     display: flex;
@@ -173,28 +117,18 @@ nav a {
     display: inline-flex;
     align-items: center;
     gap: 7px;
-
     padding: 8px 11px;
-
     color: var(--gray-600);
-
     text-decoration: none;
-
     border-radius: 8px;
-
     font-size: 0.85rem;
     font-weight: 650;
-
-    transition:
-        color 0.2s ease,
-        background 0.2s ease,
-        transform 0.2s ease;
+    transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
 }
 
 nav a:hover {
     color: var(--black);
     background: var(--gray-100);
-
     transform: translateY(-1px);
 }
 
@@ -202,44 +136,27 @@ nav a i {
     font-size: 0.72rem;
 }
 
-
-
 .privacy-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     gap: 9px;
-
     padding: 11px 17px;
-
     color: var(--white);
     background: var(--black);
-
     border: 1px solid var(--black);
     border-radius: 10px;
-
     text-decoration: none;
-
     font-size: 0.85rem;
     font-weight: 750;
-
-    box-shadow:
-        0 6px 18px rgba(0, 0, 0, 0.12);
-
-    transition:
-        transform 0.25s ease,
-        background 0.25s ease,
-        box-shadow 0.25s ease;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
 }
 
 .privacy-button:hover {
     background: var(--gray-800);
-
     transform: translateY(-2px);
-
-    box-shadow:
-        0 10px 25px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
 }
 
 .privacy-button:active {
@@ -254,133 +171,78 @@ nav a i {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     gap: 8px;
-
     padding: 12px 20px;
-
     color: var(--gray-700);
     background: var(--white);
-
     border: 1px solid var(--gray-300);
     border-radius: 10px;
-
     text-decoration: none;
-
     font-size: 0.85rem;
     font-weight: 700;
-
-    transition:
-        background 0.2s ease,
-        color 0.2s ease,
-        transform 0.2s ease;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
 .secondary-button:hover {
     color: var(--black);
     background: var(--gray-100);
-
     transform: translateY(-2px);
 }
-
-
 
 .hero {
     position: relative;
     overflow: hidden;
-
     padding: 92px 20px 76px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #ffffff 0%,
-            #f4f4f4 100%
-        );
-
+    background: linear-gradient(135deg, #ffffff 0%, #f4f4f4 100%);
     border-bottom: 1px solid var(--border);
 }
 
 .hero::before {
     content: "";
-
     position: absolute;
-
     width: 430px;
     height: 430px;
-
     top: -230px;
     right: -100px;
-
     border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(0, 0, 0, 0.06),
-            transparent 68%
-        );
-
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.06), transparent 68%);
     animation: float 9s ease-in-out infinite;
 }
 
 .hero::after {
     content: "";
-
     position: absolute;
-
     width: 320px;
     height: 320px;
-
     bottom: -200px;
     left: -100px;
-
     border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(0, 0, 0, 0.045),
-            transparent 70%
-        );
-
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.045), transparent 70%);
     animation: float 11s ease-in-out infinite reverse;
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
-
     width: min(900px, 100%);
-
     margin: auto;
-
     text-align: center;
-
     animation: fadeUp 0.8s ease both;
 }
 
 .eyebrow {
     display: inline-flex;
     align-items: center;
-
     gap: 8px;
-
     padding: 7px 13px;
-
     border: 1px solid var(--gray-300);
     border-radius: 999px;
-
     background: rgba(255, 255, 255, 0.85);
-
     color: var(--gray-700);
-
     font-size: 0.75rem;
     font-weight: 750;
-
     letter-spacing: 0.06em;
     text-transform: uppercase;
-
     box-shadow: var(--shadow-sm);
 }
 
@@ -391,13 +253,9 @@ nav a i {
 
 .hero h1 {
     margin-top: 22px;
-
     color: var(--black);
-
     font-size: clamp(2.3rem, 5vw, 4.4rem);
-
     line-height: 1.06;
-
     letter-spacing: -0.06em;
 }
 
@@ -408,11 +266,8 @@ nav a i {
 
 .hero-description {
     max-width: 700px;
-
     margin: 23px auto 0;
-
     color: var(--gray-600);
-
     font-size: 1.02rem;
 }
 
@@ -420,13 +275,9 @@ nav a i {
     display: flex;
     align-items: center;
     justify-content: center;
-
     gap: 8px;
-
     margin-top: 22px;
-
     color: var(--gray-500);
-
     font-size: 0.86rem;
 }
 
@@ -439,9 +290,7 @@ nav a i {
     display: flex;
     justify-content: center;
     align-items: center;
-
     gap: 12px;
-
     margin-top: 30px;
 }
 
@@ -449,56 +298,35 @@ nav a i {
     padding: 12px 20px;
 }
 
-
-
 .page {
     width: min(1180px, calc(100% - 40px));
-
     margin: 55px auto 80px;
-
     display: grid;
-
     grid-template-columns: 255px minmax(0, 1fr);
-
     gap: 42px;
-
     align-items: start;
 }
-
-
 
 .sidebar {
     position: sticky;
     top: 102px;
-
     padding: 21px;
-
     background: rgba(255, 255, 255, 0.92);
-
     border: 1px solid var(--border);
-
     border-radius: var(--radius);
-
     box-shadow: var(--shadow-sm);
-
     animation: fadeLeft 0.8s ease both;
 }
 
 .sidebar-title {
     display: flex;
     align-items: center;
-
     gap: 8px;
-
     margin-bottom: 14px;
-
     color: var(--black);
-
     font-size: 0.75rem;
     font-weight: 850;
-
     letter-spacing: 0.08em;
-
     text-transform: uppercase;
 }
 
@@ -517,78 +345,49 @@ nav a i {
 .sidebar a {
     display: flex;
     align-items: center;
-
     gap: 8px;
-
     padding: 7px 9px;
-
     color: var(--gray-500);
-
     border-radius: 8px;
-
     text-decoration: none;
-
     font-size: 0.83rem;
     font-weight: 550;
-
-    transition:
-        background 0.2s ease,
-        color 0.2s ease,
-        padding-left 0.2s ease;
+    transition: background 0.2s ease, color 0.2s ease, padding-left 0.2s ease;
 }
 
 .sidebar a:hover {
     color: var(--black);
-
     background: var(--gray-100);
-
     padding-left: 13px;
 }
 
 .sidebar a i {
     width: 13px;
     text-align: center;
-
     font-size: 0.62rem;
 }
 
-
 .terms {
     min-width: 0;
-
     background: var(--white);
-
     border: 1px solid var(--border);
-
     border-radius: 23px;
-
     box-shadow: var(--shadow-md);
-
     overflow: hidden;
-
     animation: fadeUp 0.8s 0.12s ease both;
 }
 
 .terms-header {
     padding: 34px 42px;
-
     color: var(--white);
-
-    background:
-        linear-gradient(
-            135deg,
-            #080808,
-            #303030
-        );
+    background: linear-gradient( 135deg, #080808, #303030 );
 }
 
 .terms-header h2 {
     display: flex;
     align-items: center;
     gap: 12px;
-
     font-size: 1.4rem;
-
     letter-spacing: -0.03em;
 }
 
@@ -599,25 +398,16 @@ nav a i {
 
 .terms-header p {
     margin-top: 6px;
-
     color: rgba(255, 255, 255, 0.62);
-
     font-size: 0.88rem;
 }
 
-
-
 .section {
     padding: 38px 42px;
-
     border-bottom: 1px solid #eeeeee;
-
     opacity: 0;
-
     transform: translateY(15px);
-
-    animation:
-        reveal 0.65s ease forwards;
+    animation: reveal 0.65s ease forwards;
 }
 
 .section:last-of-type {
@@ -627,39 +417,26 @@ nav a i {
 .section h3 {
     display: flex;
     align-items: center;
-
     gap: 13px;
-
     margin-bottom: 18px;
-
     color: var(--black);
-
     font-size: 1.18rem;
-
     line-height: 1.35;
-
     letter-spacing: -0.025em;
 }
 
 .number {
     flex: 0 0 auto;
-
     width: 34px;
     height: 34px;
-
     display: grid;
     place-items: center;
-
     border-radius: 9px;
-
     color: var(--white);
     background: var(--black);
-
     font-size: 0.75rem;
     font-weight: 850;
-
-    box-shadow:
-        0 6px 15px rgba(0, 0, 0, 0.13);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.13);
 }
 
 .section h3 > i {
@@ -669,8 +446,8 @@ nav a i {
 
 .section p {
     color: var(--gray-600);
-
     font-size: 0.94rem;
+    text-align: justify;
 }
 
 .section p + p {
@@ -684,7 +461,6 @@ nav a i {
 .section ul,
 .section ol {
     margin: 15px 0 0 22px;
-
     color: var(--gray-600);
 }
 
@@ -697,132 +473,88 @@ nav a i {
     color: var(--gray-700);
 }
 
-
-
 .highlight {
     display: flex;
     align-items: flex-start;
-
     gap: 11px;
-
     margin-top: 20px;
-
     padding: 17px 19px;
-
     border-left: 4px solid var(--black);
-
     border-radius: 0 11px 11px 0;
-
     background: var(--gray-100);
-
     color: var(--gray-800);
-
     font-size: 0.9rem;
+    text-align: justify;
 }
 
 .highlight i {
     margin-top: 4px;
-
     color: var(--gray-700);
-
     flex: 0 0 auto;
 }
 
-
-
 .acceptance {
     margin: 30px 42px 42px;
-
     padding: 25px;
-
     border: 1px solid var(--gray-300);
-
     border-radius: 15px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #fafafa,
-            #f1f1f1
-        );
+    background: linear-gradient(135deg, #fafafa, #f1f1f1);
 }
 
 .acceptance-title {
     display: flex;
     align-items: center;
-
     gap: 10px;
-
     margin-bottom: 10px;
-
     color: var(--black);
-
     font-weight: 800;
 }
 
 .check {
     width: 28px;
     height: 28px;
-
     display: grid;
     place-items: center;
-
     flex: 0 0 auto;
-
     border-radius: 50%;
-
     color: var(--white);
     background: var(--black);
-
     font-size: 0.75rem;
 }
 
 .acceptance p {
     color: var(--gray-500);
-
     font-size: 0.88rem;
 }
 
 .acceptance-actions {
     display: flex;
     flex-wrap: wrap;
-
     gap: 10px;
-
     margin-top: 18px;
 }
 
-
-
 footer {
     padding: 45px 20px;
-
     color: var(--white);
-
     background: var(--black);
 }
 
 .footer-inner {
     width: min(1180px, 100%);
-
     margin: auto;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     gap: 25px;
 }
 
 .footer-brand {
     display: flex;
     align-items: center;
-
     gap: 9px;
-
     font-size: 1.15rem;
     font-weight: 850;
-
     letter-spacing: -0.04em;
 }
 
@@ -833,24 +565,17 @@ footer {
 
 .footer-info {
     color: rgba(255, 255, 255, 0.52);
-
     font-size: 0.8rem;
-
     text-align: right;
 }
 
 .footer-link {
     display: inline-flex;
     align-items: center;
-
     gap: 7px;
-
     color: white;
-
     text-decoration: none;
-
     font-weight: 650;
-
     transition: opacity 0.2s ease;
 }
 
@@ -861,8 +586,6 @@ footer {
 .footer-link i {
     font-size: 0.7rem;
 }
-
-
 
 @keyframes fadeUp {
     from {
@@ -908,8 +631,7 @@ footer {
 }
 
 @keyframes float {
-    0%,
-    100% {
+    0%, 100% {
         transform: translateY(0) translateX(0);
     }
 
@@ -919,8 +641,7 @@ footer {
 }
 
 @keyframes logoPulse {
-    0%,
-    100% {
+    0%, 100% {
         box-shadow:
             0 8px 20px rgba(0, 0, 0, 0.15),
             0 0 0 0 rgba(0, 0, 0, 0.08);
@@ -952,7 +673,6 @@ footer {
     .sidebar ul {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-
         gap: 3px;
     }
 
@@ -993,16 +713,13 @@ footer {
 
     .page {
         width: calc(100% - 24px);
-
         margin-top: 28px;
         margin-bottom: 45px;
-
         gap: 20px;
     }
 
     .sidebar {
         padding: 16px;
-
         border-radius: 14px;
     }
 
@@ -1059,18 +776,345 @@ footer {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
+    *, *::before, *::after {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         scroll-behavior: auto !important;
         transition-duration: 0.01ms !important;
     }
 
-    .brand-icon,
-    .brand-icon img {
+    .brand-icon, .brand-icon img {
         animation: none;
         transition: none;
+    }
+}
+
+@media print {
+    header {
+        display: none;
+    }
+
+    .hero {
+        display: none;
+    }
+
+    @page {
+        size: A4;
+        margin: 25mm 22mm 25mm 22mm;
+    }
+
+    *,
+    *::before,
+    *::after {
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    html,
+    body {
+        width: 100%;
+        min-height: 100%;
+        margin: 0;
+        padding: 0;
+        background: #fff !important;
+        color: #111 !important;
+    }
+
+    body {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 11.5pt;
+        line-height: 1.65;
+    }
+
+    .sidebar,
+    nav,
+    header,
+    footer,
+    .no-print,
+    .print-hidden,
+    button,
+    .btn,
+    .actions,
+    .menu,
+    .mobile-menu {
+        display: none !important;
+    }
+
+    main,
+    .main,
+    .content,
+    .terms-content,
+    .document,
+    .document-content {
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .container,
+    .layout,
+    .page,
+    .wrapper {
+        display: block !important;
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    h1 {
+        font-family: Georgia, "Times New Roman", serif;
+        color: #111 !important;
+        font-size: 20pt;
+        line-height: 1.25;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin: 0 0 8pt 0;
+        padding: 0;
+        font-weight: 700;
+    }
+
+    .document-subtitle,
+    .subtitle {
+        display: block;
+        text-align: center;
+        font-size: 10pt;
+        color: #444 !important;
+        margin-bottom: 22pt;
+    }
+
+    h2,
+    h3 {
+        font-family: Georgia, "Times New Roman", serif;
+        color: #111 !important;
+        font-weight: 700;
+        line-height: 1.3;
+    }
+
+    h2 {
+        font-size: 13.5pt;
+        margin-top: 20pt;
+        margin-bottom: 9pt;
+        padding-bottom: 3pt;
+        border-bottom: 0.5pt solid #999;
+        page-break-after: avoid;
+        break-after: avoid;
+    }
+
+    h3 {
+        font-size: 12pt;
+        margin-top: 15pt;
+        margin-bottom: 7pt;
+        page-break-after: avoid;
+        break-after: avoid;
+    }
+
+    p {
+        margin: 0 0 9pt 0;
+        text-align: justify;
+        text-justify: inter-word;
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2 + p,
+    h3 + p {
+        margin-top: 0;
+    }
+
+    ul,
+    ol {
+        margin-top: 6pt;
+        margin-bottom: 10pt;
+        padding-left: 22pt;
+    }
+
+    li {
+        margin-bottom: 4pt;
+        text-align: justify;
+        break-inside: avoid;
+    }
+
+    strong,
+    b {
+        font-weight: 700;
+        color: #111 !important;
+    }
+
+    em,
+    i {
+        color: #222 !important;
+    }
+
+    .important,
+    .info-box,
+    .notice,
+    .alert,
+    blockquote {
+        display: block;
+        margin: 12pt 0;
+        padding: 9pt 11pt;
+        border-left: 2pt solid #333;
+        background: #f5f5f5 !important;
+        color: #222 !important;
+        font-size: 10.5pt;
+        line-height: 1.55;
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+
+    a {
+        color: #111 !important;
+        text-decoration: none !important;
+    }
+
+    a[href]::after {
+        content: none !important;
+    }
+
+    i[class*="fa-"],
+    svg {
+        color: #111 !important;
+    }
+
+    section {
+        display: block;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        page-break-inside: auto;
+    }
+
+    section > h2,
+    section > h3 {
+        page-break-after: avoid;
+        break-after: avoid;
+    }
+
+    table,
+    blockquote,
+    figure,
+    .important,
+    .info-box,
+    .notice {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+
+    tr,
+    li {
+        page-break-inside: avoid;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 12pt 0;
+        font-size: 10pt;
+    }
+
+    th,
+    td {
+        border: 0.5pt solid #888;
+        padding: 6pt 7pt;
+        color: #111 !important;
+    }
+
+    th {
+        font-weight: 700;
+        background: #eee !important;
+    }
+
+    code,
+    pre {
+        font-family: "Courier New", monospace;
+        font-size: 9pt;
+    }
+
+    pre {
+        white-space: pre-wrap;
+        border: 0.5pt solid #999;
+        padding: 8pt;
+        page-break-inside: avoid;
+    }
+
+    .document-meta,
+    .metadata,
+    .document-info {
+        display: block;
+        text-align: center;
+        font-size: 9.5pt;
+        color: #555 !important;
+        margin: 5pt 0 20pt;
+    }
+
+    .version,
+    .last-update,
+    .updated-at {
+        font-size: 9pt;
+        color: #555 !important;
+        text-align: center;
+    }
+
+    .signature,
+    .acceptance,
+    .signature-block {
+        margin-top: 30pt;
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+
+    .signature-line {
+        width: 65%;
+        margin: 35pt auto 5pt;
+        border-top: 0.7pt solid #111;
+        text-align: center;
+        padding-top: 5pt;
+    }
+
+    .document-cover,
+    .cover {
+        min-height: 240mm;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        page-break-after: always;
+    }
+
+    .document-cover h1,
+    .cover h1 {
+        font-size: 22pt;
+        max-width: 160mm;
+    }
+
+    .document-cover .logo,
+    .cover .logo {
+        max-width: 45mm;
+        max-height: 25mm;
+        margin-bottom: 25pt;
+    }
+
+    .page-break {
+        page-break-before: always;
+        break-before: page;
+    }
+
+    .avoid-break {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+
+    .print-footer {
+        display: block !important;
+        margin-top: 25pt;
+        padding-top: 8pt;
+        border-top: 0.5pt solid #aaa;
+        text-align: center;
+        font-size: 8.5pt;
+        color: #666 !important;
     }
 }
